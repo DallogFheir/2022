@@ -1,3 +1,5 @@
+package day2;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,7 +9,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        final File file = new File("./day-x/input.txt");
+        final File file = new File("./src/day2/input.txt");
 
         try (final BufferedReader reader = new BufferedReader(new FileReader(file))) {
             final ArrayList<String> lines = new ArrayList<String>();
@@ -26,10 +28,31 @@ public class Main {
     }
 
     private static int part_1(ArrayList<String> lines) {
-        return 0;
+        return Main.calculateScore(lines, Mode.PLAYER_CHOICE);
     }
 
     private static int part_2(ArrayList<String> lines) {
-        return 0;
+        return Main.calculateScore(lines, Mode.RESULT);
+    }
+
+    private static ArrayList<Round> parseInput(ArrayList<String> lines, Mode mode) {
+        final ArrayList<Round> rounds = new ArrayList<Round>();
+
+        for (String line : lines) {
+            rounds.add(Round.parseLine(line, mode));
+        }
+
+        return rounds;
+    }
+
+    private static int calculateScore(ArrayList<String> lines, Mode mode) {
+        final ArrayList<Round> rounds = Main.parseInput(lines, mode);
+        int score = 0;
+
+        for (Round round : rounds) {
+            score += round.calculateScore();
+        }
+
+        return score;
     }
 }

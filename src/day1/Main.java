@@ -1,3 +1,5 @@
+package day1;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,7 +9,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        final File file = new File("./day-1/input.txt");
+        final File file = new File("./src/day1/input.txt");
 
         try (final BufferedReader reader = new BufferedReader(new FileReader(file))) {
             final ArrayList<String> lines = new ArrayList<String>();
@@ -25,7 +27,7 @@ public class Main {
         }
     }
 
-    public static int part_1(ArrayList<String> lines) {
+    private static int part_1(ArrayList<String> lines) {
         final ArrayList<Elf> elves = Main.parseInput(lines);
 
         Elf maxElf = elves.get(0);
@@ -40,14 +42,14 @@ public class Main {
         return maxElf.getAllCalories();
     }
 
-    public static int part_2(ArrayList<String> lines) {
+    private static int part_2(ArrayList<String> lines) {
         final ArrayList<Elf> elves = Main.parseInput(lines);
         elves.sort((elf_1, elf_2) -> elf_2.getAllCalories() - elf_1.getAllCalories());
 
         return elves.get(0).getAllCalories() + elves.get(1).getAllCalories() + elves.get(2).getAllCalories();
     }
 
-    public static ArrayList<Elf> parseInput(ArrayList<String> lines) {
+    private static ArrayList<Elf> parseInput(ArrayList<String> lines) {
         final ArrayList<Elf> elves = new ArrayList<Elf>();
 
         ArrayList<Integer> currentCalories = new ArrayList<Integer>();
