@@ -1,3 +1,5 @@
+package dayX;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,7 +9,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        final File file = new File("./day-x/input.txt");
+        final File file = new File("./src/dayX/input.txt");
 
         try (final BufferedReader reader = new BufferedReader(new FileReader(file))) {
             final ArrayList<String> lines = new ArrayList<String>();
