@@ -21,8 +21,8 @@ public class Main {
                 lines.add(line);
             }
 
-            System.out.println(Main.part_1(lines));
-            System.out.println(Main.part_2(lines));
+            System.out.println("Part 1: " + Main.part_1(lines));
+            System.out.println("Part 2: " + Main.part_2(lines));
         } catch (FileNotFoundException err) {
             System.out.println("File not found.");
         } catch (IOException err) {
