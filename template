@@ -27,11 +27,11 @@ public class Main {
         }
     }
 
-    private static int part_1(ArrayList<String> lines) {
+    private static int part_1(final ArrayList<String> lines) {
         return 0;
     }
 
-    private static int part_2(ArrayList<String> lines) {
+    private static int part_2(final ArrayList<String> lines) {
         return 0;
     }
 }
