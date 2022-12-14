@@ -1,4 +1,4 @@
-package dayX;
+package day14;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(final String[] args) {
-        final File file = new File("./src/dayX/input.txt");
+        final File file = new File("./src/day14/input.txt");
 
         try (final BufferedReader reader = new BufferedReader(new FileReader(file))) {
             final ArrayList<String> lines = new ArrayList<String>();
@@ -28,10 +28,12 @@ public class Main {
     }
 
     private static int part_1(final ArrayList<String> lines) {
-        return 0;
+        final CaveMap caveMap = CaveMap.parseFromScan(lines);
+        return caveMap.simulateSand();
     }
 
     private static int part_2(final ArrayList<String> lines) {
-        return 0;
+        final CaveMap caveMap = CaveMap.parseFromScan(lines);
+        return caveMap.simulateSandWithFloor();
     }
 }
